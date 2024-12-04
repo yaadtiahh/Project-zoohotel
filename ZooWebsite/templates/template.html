@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  {% block css %}{% endblock %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+        <a href="/"><img src="#" alt="The Quest Logo"></a>
+    </div>
+    <div class="header-right">
+      <nav class="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news_list">News</a></li>
+          <li><a href="/about">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </nav>
+      <div class="more-info">
+        <span>More info</span>
+        <img src="#" class="arrow-icon" alt="Arrow Icon">
+        <ul class="info-menu">
+          <li data-lang="en">Comming soon...</li>
+          <li data-lang="ru">Comming soon...</li>
+          <li data-lang="es">Comming soon...</li>
+          <li data-lang="fr">Comming soon...</li>
+        </ul>
+      </div>
+      <div class="btns">
+        <button class="btn-sign-in">Join</button>
+        <button class="btn-sign-up">Login</button>
+      </div>
+    </div>
+  </header>
+  {% block body %}
+  {% endblock %}
+
+</body>
+</html>
