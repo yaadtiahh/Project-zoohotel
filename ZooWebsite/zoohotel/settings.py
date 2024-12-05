@@ -132,3 +132,12 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+
+# ОТПРАВКА НА ПОЧТУ ЧЕРЕЗ КНОПКУ
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'yar.sol08162006@gmail.com'  # Ваш email
+EMAIL_HOST_PASSWORD = 'your_email_password'  # Пароль приложения (не основной пароль)

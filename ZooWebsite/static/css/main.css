@@ -6,128 +6,162 @@ body, html {
     background-color: #ffffff;
 }
 
-/* Хедер */
-.header {
-    display: flex;
-    flex-direction: row; /* Устанавливаем направление флекса (по умолчанию) */
-    justify-content: space-between;
-    align-items: center; 
+/* ГЛАВНАЯ СТРАНИЦА */
+
+/* ОСНОВНОЙ БЛОК С ФОРМОЙ */
+/* Основной блок */
+.welcome-block {
     width: 100%;
-    height: 83px;
-    padding: 0px 100px;
-    margin: 0;
-    background-color: white;
-    color: #81000f;
+    height: 700px; /* Фиксированная высота */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: #d70027;
+    color: white;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+.main-text {
+    width: 300px;
+    height: 300px;
+    margin-left: 100px;
+}
+
+.welcome-block .main-text h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.welcome-block .main-text p {
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+/* Форма бронирования */
+.booking-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 0px 0px 100px;
+    width: 800px;
+    height: 120px;
+    border: 1px solid white;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.449);
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row input {
+    padding: 10px;
     font-size: 16px;
-    box-sizing: border-box; /* Учитываем отступы и границы в размерах элемента */
-    position: fixed;
-    top: 0;
-    z-index: 1000; /* На переднем плане */
+    border: 2px solid white;
+    border-radius: 14px;
+    outline: none;
+    box-sizing: border-box;
+    width: auto;
+    height: 40px;
 }
 
-.header .logo img {
-    max-height: 55px; /* Размер логотипа */
+.form-row input:focus {
+    border-color: #ffccd5;
 }
 
-/* Контейнер для правых элементов */
+/* Кнопка */
+.btn-submit {
+    background-color: white;
+    color: #d70027;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 40px;
+}
 
-.header-right {
+.btn-submit:hover {
+    background-color: #d70027;
+    color: white;
+}
+
+/* УБИРАНИЕ СТРЕЛОЧЕК СПРАВА ПОЛЯ */
+/* Для Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Для Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/* БЛОК О НАС  */
+
+.about-us {
+    padding-top: 80px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nav {
-    list-style-type: none; /* Убираем маркеры списка */    
-    padding: 0; /* Убираем отступы */
-    margin: 0; /* Убираем внешние отступы */
-    color: #007AFF;
+.about-us .container {
+    width: 100%;
+    margin: 0 auto;
 }
 
-nav a {
-    text-decoration: none;
-}
-.nav li {
-    display: inline; /* Элементы располагаются в одну строку */
-    margin-right: 32px;
+.about-us h3 {
+    color: #d70027;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-/* Переключение языка */
-.more-info {
-    margin: 0;
+.about-us h2 {
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.about-us .content-main {
     display: flex;
-    align-items: center;
-    gap: 2px;
-    font-weight: 500;
-    position: relative; /* Для корректного позиционирования меню */
-    cursor: pointer;
-    margin: 16px;
+    flex-direction: column;
+    gap: 20px; /* Отступ между блоками */
+    flex-wrap: wrap; /* Для переносов на меньших экранах */
 }
 
-.more-info .icon,
-.more-info .arrow-icon {
-    width: 25px;
-    height: 25px;
+.about-us .content, .about-us .content-2 {
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* Используйте 100% ширины, а не фиксированное значение */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Для более компактного расположения элементов */
 }
 
-.info-menu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Меню всегда под переключателем */
-    right: 0;
-    background: #222;
-    border-radius: 5px;
-    list-style: none;
-    z-index: 1000;
-    width: 175px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 0;
-    overflow: hidden; 
+.content .text, .content-2 .text-2 {
+    text-align: left;
+    width: 600px; /* Элементы будут занимать 45% от ширины контейнера */
+    margin-right: 20px; /* Добавим отступы между элементами */
 }
 
-/* Стили для элементов списка */
-.info-menu li {
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    transition: background 0.2s ease;
-    cursor: pointer;
+.content .images, .content-2 .images-2 {
+    max-width: 350px; /* Чтобы изображения не выходили за границы */
+    margin-left: 20px;
 }
 
-.info-menu li:hover {
-    background: #FFCE00;
-    color: black;
+.about-us .content img, .about-us .content-2 img {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
 }
-
-/* Hover эффект */
-.more-info.active .info-menu {
-    display: block;
-}
-
-.more-info.active .arrow-icon {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-}
-
-.header .btn-sign-in{
-    width: 71px;
-    height: 40px;
-    background-color: #007bff00;
-    color: #007AFF;
-    border: 2px solid #007AFF;
-    margin-right: 16px;
-    cursor: pointer;
-}
-
-.header .btn-sign-up{
-    width: 71px;
-    height: 40px;
-    background-color: #007AFF;
-    color: white;
-    border: 2px solid #007AFF;
-    cursor: pointer;
-}
-
-
-/* ГЛАВНАЯ СТРАНИЦА */

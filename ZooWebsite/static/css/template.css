@@ -1,0 +1,69 @@
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+    height: 84px;
+    padding: 0px 100px;
+    margin: 0;
+    background-color: white;
+    color: #d70027;
+    box-sizing: border-box; /* Учитываем отступы и границы в размерах элемента */
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* На переднем плане */
+}
+
+.header .logo img {
+    max-height: 64px; /* Размер логотипа */
+}
+
+/* Контейнер для правых элементов */
+
+.header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    list-style-type: none; /* Убираем маркеры списка */    
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+nav a {
+    text-decoration: none;
+    color: #d70027;
+    font-size: 22px;
+    font-weight: 600;
+}
+.nav li {
+    display: inline; /* Элементы располагаются в одну строку */
+    margin-right: 32px;
+}
+
+.more-info .icon,
+.more-info .arrow-icon {
+    width: 25px;
+    height: 25px;
+}
+
+/* Стили для элементов списка */
+
+
+.header .btn-send{
+    width: 150px;
+    height: 40px;
+    background-color: #d70027;
+    color: white;
+    border: 2px solid #d70027;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+main {
+    padding-top: 80px; /* Высота хедера */
+}

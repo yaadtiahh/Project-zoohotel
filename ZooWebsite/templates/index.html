@@ -3,14 +3,77 @@
 {% load static %}
 
 {% block title %}
-  Uni Quest
+  Zoo Hotel
 {% endblock %}
 
 {% block css %}
-
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 {% endblock %}
 
+{% block content %}
+  <div class="welcome-block">
+    <div class="main-text">
+      <h1>Добро пожаловать в зоогостиницу "Тимошка"!</h1>
+      <p>Оставьте заявку на бронирование прямо сейчас!</p>
+    </div>
 
-{% block body %}
-  <div class="main-view">
+    <form class="booking-form" action="/сдл" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-row">
+            <input type="text" name="name" placeholder="ФИО" required>
+            <input type="number" id="phone" name="phone" placeholder="Телефон">
+            <input type="text" id="booking-dates" name="dates" placeholder="Выберите даты" required>
+            <button type="submit" class="btn-submit">Забронировать</button>
+        </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    // Инициализация календаря
+    flatpickr("#booking-dates", {
+        mode: "range",
+        dateFormat: "d.m.Y",
+        locale: "ru"
+    });
+  </script>
+
+  <section class="about-us">
+    <div class="container">
+      <h3>Чем занимается наша компания</h3>
+      <h2>НЕМНОГО О НАС</h2>
+      <div class="content-main">
+
+        <div class="content">
+          <div class="text">
+            <p>
+              Мы предоставляем высокий сервис всем гостям отеля. В номерах проводятся эко-уборки.
+              Все средства — на основе натуральных продуктов. Это большой плюс для здоровья наших гостей, 
+              ведь в воздухе не будет химикатов. С первых минут пребывания в нашем отеле вы в полной мере сможете 
+              оценить внимательность персонала и приятно быструю регистрацию.
+            </p>
+          </div>
+          <div class="images">
+            <img src="/static/img/Dog.jpg" alt="Собака" class="main-img">
+          </div>
+
+          <div class="content-2">
+            <div class="images-2">
+              <img src="/static/img/cat.jpg" alt="Кот" class="sub-img">
+            </div>
+            <div class="text-2">
+              <p>
+                Отель находится в самом центре города, в его исторической части. Остановив свой выбор на этом отеле, 
+                вы получите основные достопримечательности города в вашей доступности от места проживания. Wi-Fi 
+                предоставляется на всей территории отеля.
+              </p>
+              <button class="btn-red">ПОДРОБНЕЕ О НАС</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
