@@ -1,6 +1,8 @@
 from django.core.mail import send_mail
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+
+from .models import Review
 
 
 # Функциональное представление для домашней страницы
@@ -38,3 +40,28 @@ def prices(request):
 
 def about(request):
     return render(request, 'about.html')
+
+
+def reviews(request):
+    reviews = Review.objects.all().order_by('-created_at')
+    return render(request, 'reviews.html', {'reviews': reviews})
+
+
+def add_review(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        text = request.POST.get("text")
+        avatar = request.FILES.get("avatar")
+
+        if name and text:
+            review = Review.objects.create(name=name, text=text, avatar=avatar)
+            avatar_url = review.avatar.url if review.avatar else None
+            return JsonResponse({
+                "success": True,
+                "name": review.name,
+                "text": review.text,
+                "avatar": avatar_url,
+                "created_at": review.created_at.strftime("%d.%m.%Y %H:%M")
+            })
+        return JsonResponse({"success": False, "error": "Все поля обязательны."})
+    return JsonResponse({"success": False, "error": "Только POST-запросы допустимы."})

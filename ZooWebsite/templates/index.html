@@ -102,4 +102,31 @@
         </div>
     </div>
   </section>
+
+
+  <!-- ОТЗЫВЫ -->
+  <div class="review-form">
+    <input type="text" id="name" placeholder="Ваше имя">
+    <textarea id="text" rows="4" placeholder="Ваш отзыв"></textarea>
+    <input type="file" id="avatar" accept="image/*">
+    <button id="submit-review">Добавить отзыв</button>
+</div>
+
+<ul class="reviews-list" id="reviews-list">
+    {% for review in reviews %}
+        <li class="review-item">
+            <div style="display: flex; align-items: center;">
+                {% if review.avatar %}
+                    <img src="{{ review.avatar.url }}" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+                {% else %}
+                    <img src="/static/default-avatar.png" alt="Default Avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+                {% endif %}
+                <h4>{{ review.name }}</h4>
+            </div>
+            <p>{{ review.text }}</p>
+            <small>Добавлено: {{ review.created_at|date:"d.m.Y H:i" }}</small>
+        </li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
