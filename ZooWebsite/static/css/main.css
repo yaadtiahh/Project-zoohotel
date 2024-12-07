@@ -4,6 +4,7 @@ body, html {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 /* ГЛАВНАЯ СТРАНИЦА */
@@ -20,12 +21,14 @@ body, html {
     color: white;
     padding-top: 80px;
     box-sizing: border-box;
+    
 }
 
 .main-text {
     width: 300px;
     height: 300px;
     margin-left: 100px;
+    animation: fadeInLeft 1.5s ease;
 }
 
 .welcome-block .main-text h1 {
@@ -104,64 +107,271 @@ input[type="number"] {
 }
 
 
-/* БЛОК О НАС  */
+/* БЛОК: О НАС  */
 
 .about-us {
-    padding-top: 80px;
-    
+    position: relative;
+    background: white; /* Глубокий градиент */
+    padding: 100px 20px;
+    color: #d70027;
+    overflow: hidden;
+    padding-left: 100px;
+    width: 100%; /* Ограничение ширины */
+}
+
+.about-us::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+    animation: pulse 5s infinite;
+}
+
+.about-us::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+    animation: pulse 7s infinite reverse;
+}
+
+.about-us-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-us-content {
+    flex: 1 1 50%;
+    padding-right: 30px;
+    animation: fadeInLeft 1.5s ease;
+}
+
+.about-us-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #d70027;
+    position: relative;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.about-us-title::after {
+    content: '';
+    width: 80px;
+    height: 6px;
+    background: #d70027;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    border-radius: 3px;
+}
+
+.about-us-content p {
+    font-size: 20px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: #d70027;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.281);
+}
+
+.about-us-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #d70027;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.about-us-button:hover {
+    background-color: #f2f2f2;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.about-us-image {
+    flex: 1 1 45%;
+    animation: fadeInRight 1.5s ease;
+}
+
+.about-us-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-us-image img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Анимация */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+}
+
+/* БЛОК: МЫ ПРЕДЛАГАЕМ */
+
+/* Секция */
+.offers {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.offers-title {
+    font-size: 36px;
+    color: #d70027;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Контейнер с карточками */
+.offers-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Карточка */
+.offer-card {
+    width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Фото с эффектами */
+.offer-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.offer-card:hover .offer-image img {
+    transform: scale(1.1);
+    filter: blur(4px);
+}
+
+/* Оверлей для текста */
+.offer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.about-us .container {
-    width: 100%;
-    margin: 0 auto;
+.offer-card:hover .offer-overlay {
+    opacity: 1;
 }
 
-.about-us h3 {
-    color: #d70027;
+.offer-button {
+    padding: 10px 20px;
+    background-color: #d70027;
+    color: #fff;
+    text-decoration: none;
     font-size: 18px;
-    margin-bottom: 10px;
+    font-weight: 600;
     text-transform: uppercase;
-    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
 }
 
-.about-us h2 {
-    font-size: 40px;
-    color: #222;
-    margin-bottom: 30px;
-    font-weight: bold;
+.offer-button:hover {
+    background-color: #a5001f;
 }
 
-.about-us .content-main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Отступ между блоками */
-    flex-wrap: wrap; /* Для переносов на меньших экранах */
-}
-
-.about-us .content, .about-us .content-2 {
-    display: flex;
-    flex-direction: row;
-    width: 100%; /* Используйте 100% ширины, а не фиксированное значение */
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Для более компактного расположения элементов */
-}
-
-.content .text, .content-2 .text-2 {
+/* Контент */
+.offer-content {
+    padding: 20px;
     text-align: left;
-    width: 600px; /* Элементы будут занимать 45% от ширины контейнера */
-    margin-right: 20px; /* Добавим отступы между элементами */
 }
 
-.content .images, .content-2 .images-2 {
-    max-width: 350px; /* Чтобы изображения не выходили за границы */
-    margin-left: 20px;
+.offer-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
 }
 
-.about-us .content img, .about-us .content-2 img {
-    width: 350px;
-    height: auto;
-    border-radius: 10px;
+.offer-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.offer-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d70027;
 }

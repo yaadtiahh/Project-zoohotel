@@ -12,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+<!-- БЛОК -> ГЛАВНЫЙ КОНТЕНТ -->
   <div class="welcome-block">
     <div class="main-text">
       <h1>Добро пожаловать в зоогостиницу "Тимошка"!</h1>
@@ -39,41 +40,66 @@
     });
   </script>
 
+<!-- БЛОК -> НЕМНОГО О НАС -->
   <section class="about-us">
-    <div class="container">
-      <h3>Чем занимается наша компания</h3>
-      <h2>НЕМНОГО О НАС</h2>
-      <div class="content-main">
-
-        <div class="content">
-          <div class="text">
+    <div class="about-us-container">
+        <div class="about-us-content">
+            <h2 class="about-us-title">Немного о нас</h2>
             <p>
-              Мы предоставляем высокий сервис всем гостям отеля. В номерах проводятся эко-уборки.
-              Все средства — на основе натуральных продуктов. Это большой плюс для здоровья наших гостей, 
-              ведь в воздухе не будет химикатов. С первых минут пребывания в нашем отеле вы в полной мере сможете 
-              оценить внимательность персонала и приятно быструю регистрацию.
+                Мы предоставляем высокий сервис всем гостям отеля. В номерах проводятся эко-уборки. 
+                Все средства — на основе натуральных продуктов. Это большой плюс для здоровья наших 
+                гостей, ведь в воздухе не будет химикатов. С первых минут пребывания в нашем отеле 
+                вы в полной мере сможете оценить внимательность персонала и приятно быструю регистрацию.
             </p>
-          </div>
-          <div class="images">
-            <img src="/static/img/Dog.jpg" alt="Собака" class="main-img">
-          </div>
-
-          <div class="content-2">
-            <div class="images-2">
-              <img src="/static/img/cat.jpg" alt="Кот" class="sub-img">
-            </div>
-            <div class="text-2">
-              <p>
-                Отель находится в самом центре города, в его исторической части. Остановив свой выбор на этом отеле, 
-                вы получите основные достопримечательности города в вашей доступности от места проживания. Wi-Fi 
-                предоставляется на всей территории отеля.
-              </p>
-              <button class="btn-red">ПОДРОБНЕЕ О НАС</button>
-            </div>
-          </div>
-
+            <p>
+                Отель находится в самом центре города, в его исторической части. Остановив свой выбор на этом 
+                отеле, вы получите основные достопримечательности города в вашей доступности от места проживания. 
+                Wi-Fi предоставляется на всей территории отеля.
+            </p>
+            <a href="/about" class="about-us-button">Узнать больше</a>
         </div>
-      </div>
+        <div class="about-us-image">
+            <img src="/static/img/hotel_view.jpg" alt="Люксовый отель Тимошка">
+        </div>
+    </div>
+  </section>
+
+<!-- БЛОК -> МЫ ПРЕДЛАГАЕМ -->
+  <section class="offers">
+    <h2 class="offers-title">Мы предлагаем</h2>
+    <div class="offers-container">
+        <!-- Первый номер -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="/static/img/hotel_view.jpg" alt="Номер Люкс">
+                <div class="offer-overlay">
+                    <a href="#" class="offer-button">Заказать</a>
+                </div>
+            </div>
+            <div class="offer-content">
+                <h3 class="offer-name">Номер Люкс</h3>
+                <p class="offer-description">
+                    Здесь будет располагаться примерное описание номера. Пару строк.
+                </p>
+                <p class="offer-price">От 5 000 руб/сутки</p>
+            </div>
+        </div>
+        <!-- Второй номер -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="/static/img/hotel_view.jpg" alt="Номер Полулюкс">
+                <div class="offer-overlay">
+                    <a href="#" class="offer-button">Заказать</a>
+                </div>
+            </div>
+            <div class="offer-content">
+                <h3 class="offer-name">Номер Полулюкс</h3>
+                <p class="offer-description">
+                    Здесь будет располагаться примерное описание номера. Пару строк.
+                </p>
+                <p class="offer-price">От 3 000 руб/сутки</p>
+            </div>
+        </div>
     </div>
   </section>
 {% endblock %}

@@ -34,3 +34,7 @@ def services(request):
 
 def prices(request):
     return render(request, 'prices.html')
+
+
+def about(request):
+    return render(request, 'about.html')
