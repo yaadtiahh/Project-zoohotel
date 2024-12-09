@@ -1,48 +1,48 @@
 .about {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 .about-title {
-    text-align: center;
-    font-size: 2.5em;
-    color: #2c3e50;
-  }
+  text-align: center;
+  font-size: 2.5em;
+  color: #2c3e50;
+}
 
 .about-description {
-    margin: 20px 0;
-    font-size: 1.2em;
-    color: #34495e;
-  }
+  margin: 20px 0;
+  font-size: 1.2em;
+  color: #34495e;
+}
 
 .services-title {
-    margin-top: 30px;
-    font-size: 2em;
-    color: #27ae60;
-  }
+  margin-top: 30px;
+  font-size: 2em;
+  color: #27ae60;
+}
 
 .services-list {
-    margin: 20px 0;
-    padding-left: 20px;
-  }
+  margin: 20px 0;
+  padding-left: 20px;
+}
 
 .services-list li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #2c3e50;
-  }
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #2c3e50;
+}
 
 .about-love {
-    margin-top: 30px;
-    font-size: 1.3em;
-    text-align: center;
-    color: #e74c3c;
-    font-weight: bold;
-  }
+  margin-top: 30px;
+  font-size: 1.3em;
+  text-align: center;
+  color: #e74c3c;
+  font-weight: bold;
+}

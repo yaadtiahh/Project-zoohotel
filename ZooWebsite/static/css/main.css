@@ -3,7 +3,10 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background: url(/static/img/bg.jpg);
+    background-size: cover; /* Фон масштабируется, чтобы покрыть весь блок */
+    background-repeat: no-repeat; /* Фон не повторяется */
+    background-position: center; /* Фон выравнивается по центру */
     overflow-x: hidden;
 }
 
@@ -17,7 +20,6 @@ body, html {
     display: flex;
     flex-direction: column;
     text-align: left;
-    background-color: #d70027;
     color: white;
     padding-top: 80px;
     box-sizing: border-box;
@@ -25,7 +27,7 @@ body, html {
 }
 
 .main-text {
-    width: 300px;
+    width: 400px;
     height: 300px;
     margin-left: 100px;
     animation: fadeInLeft 1.5s ease;
@@ -33,12 +35,16 @@ body, html {
 
 .welcome-block .main-text h1 {
     font-size: 48px;
+    font-weight: bold;
     margin-bottom: 16px;
+    color: #d70027;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Тень для четкости */
 }
 
 .welcome-block .main-text p {
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Тень для четкости */
 }
 
 /* Форма бронирования */
@@ -46,7 +52,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 80px 0px 0px 100px;
+    margin: 50px 0px 0px 100px;
     width: 800px;
     height: 120px;
     border: 1px solid white;
@@ -105,6 +111,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .about-us {
     position: relative;
+    background-color: #ffffff;
     background: white; /* Глубокий градиент */
     padding: 100px 20px;
     color: #d70027;
@@ -261,6 +268,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /* БЛОК: МЫ ПРЕДЛАГАЕМ */
 /* Секция */
 .offers {
+    background-color: #ffffff;
     padding: 60px 20px;
     text-align: center;
 }
@@ -368,11 +376,5 @@ input[type="number"]::-webkit-outer-spin-button {
 .offer-price {
     font-size: 18px;
     font-weight: bold;
-    color: #d70027;
-}
-
-.offers-container .link-to-praces{
-    margin-top: 45px;
-    font-size: 20px;
     color: #d70027;
 }
