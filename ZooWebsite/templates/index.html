@@ -8,6 +8,7 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 {% endblock %}
 
@@ -39,7 +40,7 @@
         locale: "ru"
     });
   </script>
-
+<!-- ________________________________________________________________________________________________________- -->
 <!-- БЛОК -> НЕМНОГО О НАС -->
   <section class="about-us">
     <div class="about-us-container">
@@ -63,7 +64,7 @@
         </div>
     </div>
   </section>
-
+<!-- ________________________________________________________________________________________________________- -->
 <!-- БЛОК -> МЫ ПРЕДЛАГАЕМ -->
   <section class="offers">
     <h2 class="offers-title">Мы предлагаем</h2>
@@ -71,62 +72,57 @@
         <!-- Первый номер -->
         <div class="offer-card">
             <div class="offer-image">
-                <img src="/static/img/hotel_view.jpg" alt="Номер Люкс">
+                <img src="/static/img/number_2.jpg" alt="Номер Люкс">
                 <div class="offer-overlay">
                     <a href="#" class="offer-button">Заказать</a>
                 </div>
             </div>
             <div class="offer-content">
-                <h3 class="offer-name">Номер Люкс</h3>
+                <h3 class="offer-name">Кошки</h3>
                 <p class="offer-description">
-                    Здесь будет располагаться примерное описание номера. Пару строк.
+                    Гостиница для животных «Тимошка» — это профессиональные, заботливые,<br>надёжные и добрые руки для вашего любимого питомца.
                 </p>
-                <p class="offer-price">От 5 000 руб/сутки</p>
+                <p class="offer-price">От 550 руб/сутки</p>
             </div>
         </div>
         <!-- Второй номер -->
         <div class="offer-card">
             <div class="offer-image">
-                <img src="/static/img/hotel_view.jpg" alt="Номер Полулюкс">
+                <img src="/static/img/number_1.jpg" alt="Номер Полулюкс">
                 <div class="offer-overlay">
                     <a href="#" class="offer-button">Заказать</a>
                 </div>
             </div>
             <div class="offer-content">
-                <h3 class="offer-name">Номер Полулюкс</h3>
+                <h3 class="offer-name">Собаки</h3>
                 <p class="offer-description">
-                    Здесь будет располагаться примерное описание номера. Пару строк.
+                    Гостиница для животных «Тимошка» — это профессиональные, заботливые,<br>надёжные и добрые руки для вашего любимого питомца.
                 </p>
-                <p class="offer-price">От 3 000 руб/сутки</p>
+                <p class="offer-price">От 900 руб/сутки</p>
             </div>
         </div>
+        <a href="/prices" class="link-to-praces">Перейти ко всем ценам</a>
     </div>
   </section>
 
-
+<!-- ________________________________________________________________________________________________________- -->
   <!-- ОТЗЫВЫ -->
-  <div class="review-form">
-    <input type="text" id="name" placeholder="Ваше имя">
-    <textarea id="text" rows="4" placeholder="Ваш отзыв"></textarea>
-    <input type="file" id="avatar" accept="image/*">
-    <button id="submit-review">Добавить отзыв</button>
-</div>
-
-<ul class="reviews-list" id="reviews-list">
-    {% for review in reviews %}
-        <li class="review-item">
-            <div style="display: flex; align-items: center;">
-                {% if review.avatar %}
-                    <img src="{{ review.avatar.url }}" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-                {% else %}
-                    <img src="/static/default-avatar.png" alt="Default Avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-                {% endif %}
-                <h4>{{ review.name }}</h4>
-            </div>
-            <p>{{ review.text }}</p>
-            <small>Добавлено: {{ review.created_at|date:"d.m.Y H:i" }}</small>
-        </li>
-    {% endfor %}
-</ul>
+  
+<!-- ________________________________________________________________________________________________________- -->
+  <!-- КОНТАКТЫ -->
+  <div class="contact-page">
+    <section class="contact-info">
+        <h1>Контакты</h1>
+        <p>Мы всегда рады помочь и ответить на все ваши вопросы.</p>
+        <p>Адрес: Зиповская, 5/23, Центральный округ, Краснодар, 350010</p>
+        <p>Телефон: +7‒918‒217‒33‒77</p>
+        <p>Электронная почта: gtk-tim@yandex.ru</p>
+    </section>
+    <section class="contact-map">
+        <div class="dg-widget-container">
+            <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":45.06250303507905,"lon":38.98410558700562,"zoom":16},"opt":{"city":"krasnodar"},"org":[{"id":"70000001006920635"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+        </div>
+    </section>
+  </div>
 
 {% endblock %}

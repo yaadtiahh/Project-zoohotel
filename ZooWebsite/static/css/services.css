@@ -28,6 +28,13 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    cursor: pointer;
+    transition: transform 0.7s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px #7a7a7a;
 }
 
 .service-item .icon {

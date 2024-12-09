@@ -1,7 +1,5 @@
-
 .prices-section {
     padding: 20px;
-
 }
 
 .section-title {
@@ -24,12 +22,13 @@
     text-align: center;
     padding: 15px;
     background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.7s ease;
 }
 
 .price-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 8px 20px #7a7a7a;
-    transition: all ease-in-out 0.5s;
 }
 
 .price-image {
@@ -44,4 +43,3 @@
     color: #333;
     margin: 5px 0;
 }
-  

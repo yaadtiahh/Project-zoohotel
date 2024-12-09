@@ -10,5 +10,4 @@ urlpatterns = [
 
     path('reviews/', views.reviews, name='reviews'),
     path('reviews/add/', views.add_review, name='add_review'),
-
 ]

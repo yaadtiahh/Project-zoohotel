@@ -92,7 +92,7 @@ body, html {
     background-color: #d70027;
     color: white;
 }
-
+/* <!-- ________________________________________________________________________________________________________- --> */
 /* УБИРАНИЕ СТРЕЛОЧЕК СПРАВА ПОЛЯ */
 /* Для Chrome, Safari, Edge */
 input[type="number"]::-webkit-inner-spin-button, 
@@ -100,12 +100,6 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
-/* Для Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
 
 /* БЛОК: О НАС  */
 
@@ -262,8 +256,9 @@ input[type="number"] {
     }
 }
 
-/* БЛОК: МЫ ПРЕДЛАГАЕМ */
 
+/* <!-- ________________________________________________________________________________________________________- --> */
+/* БЛОК: МЫ ПРЕДЛАГАЕМ */
 /* Секция */
 .offers {
     padding: 60px 20px;
@@ -373,5 +368,11 @@ input[type="number"] {
 .offer-price {
     font-size: 18px;
     font-weight: bold;
+    color: #d70027;
+}
+
+.offers-container .link-to-praces{
+    margin-top: 45px;
+    font-size: 20px;
     color: #d70027;
 }

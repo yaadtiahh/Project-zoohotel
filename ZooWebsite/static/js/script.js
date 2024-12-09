@@ -18,8 +18,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-
-
 // ОТЗЫВЫ
 
 $(document).ready(function () {

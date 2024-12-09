@@ -1,7 +1,6 @@
 from django.core.mail import send_mail
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-
 from .models import Review
 
 
@@ -18,10 +17,10 @@ def index(request):
 
         # Отправляем email
         send_mail(
-            subject="Новая заявка на бронирование",
-            message=message,
-            from_email="yar.sol08162006@gmail.com",    # Ваш email
-            recipient_list=["egor.kuken@gmail.com"],  # Email получателя
+            subject="Новая заявка на бронирование",  # Тема письма
+            message=message,                        # Текст письма
+            from_email="your_email@example.com",    # Ваш email
+            recipient_list=["recipient@example.com"],  # Email получателя
             fail_silently=False,
         )
 
